@@ -41,5 +41,8 @@ To retrieve an item from the top of the stack we use: pop()
 - The top of the stack is at the right hand end...so, addition and removal will happen from the right
 **SEE dir 02_02_begin file stack.py
 
+A stack lends itself naturally to problems where you need to reverse the order of something
+**SEE dir 02_02_begin file reverse_string.py
+
 
 
