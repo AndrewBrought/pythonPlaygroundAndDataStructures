@@ -1,0 +1,23 @@
+Stack: A data structure in which all insertions and deletions are made at one end, called the top of the stack.
+LIFO data structure (Last In First Out - the last element to be added is the first to be removed)
+
+Common Stack operations:
+Push(item) : push item to the top of the stack
+Pop(item) : removing an item from the top of the stack
+Peek(item) : return the top item without removing it - When we want to see what's on the top of the stack but we don't want to remove it
+Is_empty(item) : return true if the stack is empty
+
+Even the we call it the top of the stack - depending on the implementation it may turn out to be the left hand side or the right hand side
+
+Applications of the Stack (higher overview, small selection of things the stack offers - all told, the stack data structure provides many powerful applications):
+
+Reverse Polish notation for evaluating arithmetic expressions
+Syntax parsing
+Cold stack: space for parameters and local variables is created
+
+Used in recursion
+
+Undo and redo operations in word processors
+
+Low-level assembly programing
+
