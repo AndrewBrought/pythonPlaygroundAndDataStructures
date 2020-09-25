@@ -21,3 +21,25 @@ Undo and redo operations in word processors
 
 Low-level assembly programing
 
+
+WRITE A STACK CLASS IN PYTHON:
+
+Using a class to represent a stack for learning purposes...because the abstraction is helpful for getting a deep understanding of how the data structure works, including using the appropriate terms like 'push' and 'pop'.
+
+In practical situations, we might just use a list
+
+Another reason to use a class - if our code needs a stack and we provide a list, there's nothing to stop another programmer from calling insert, remove and other list functions that will affect the order of the stack...this fundamentally ruins the point of defining a stack as it no longer functions the way it should
+
+The existing list methods make it very easy to use a list as a stack
+
+**Remember LIFO
+
+To add an item to the top of the stack we use: append()
+
+To retrieve an item from the top of the stack we use: pop()
+
+- The top of the stack is at the right hand end...so, addition and removal will happen from the right
+**SEE dir 02_02_begin file stack.py
+
+
+
