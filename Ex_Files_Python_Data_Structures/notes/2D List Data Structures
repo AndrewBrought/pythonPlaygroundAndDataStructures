@@ -1,0 +1,59 @@
+2D List applications
+
+Representing grids like screen pixels
+representing tabular data like a spreadsheet
+Matrices for mathematical applications
+Representing game boards
+Storing and accessing data from scientific experiments
+2D indices can be used to access DOM elements
+
+A 2D list can be thought of as a list of lists
+Elements can be a mixed type, but that's not common
+
+Many of the algorithms associated with path finding work with graphs - by graphs, the sort associated with
+graph theory and mathematics, not like graphs and charts.
+
+A maze stored in a 2D list can represent a special type of graph where each cell in a list is connected by nodes
+(think of each cell as a node) and adjacent cells (nodes) are connected by edges (the edges are how the nodes are connected,
+not the cell edges)
+
+Directed graph is one where the direction between the nodes matters
+
+Undirected graph the direction doesn't matter
+
+Weighted graphs are where each edge can have a different weight
+
+For the purposes of this work-through we are using Undirected graphs which aren't weighted
+
+We can have edges connected and Obstacle (where there's an obstacle in the middle of nodes)
+
+Cartesian Coordinates are where the horizontal is represented by x and the vertical is represented by y.
+We increase to the right for the x and we increase upwards for the y
+
+Matrix Coordinates (Grid Coordinates)
+vertical coordinate, row coordinate, occurs first and increases down by row number (depicted as i)
+
+horizontal coordinate, column coordinate, occurs second and increases like the x to the right
+by column number (depicted as j)
+
+This is how you might type a 2D list, or think of them in terms of rows:
+[['', '', ''],
+['*', '', '*'],
+['', '', '']]
+
+Internally, it doesn't process like this so it's read horizontally:
+[['', '', ''], ['*', '', '*'], ['', '', '']]
+
+This is the output that would return if you went through the rows and printed one line at a time:
+[' ', ' ', '']
+['*', '', '*']
+[' ', ' ', '']
+
+This is a tiny maze represented in a text file. The numbers are the line numbers, the dots represent spaces, and the asterisks represent obstacles:
+1  .   .   .
+2  *   .   *
+3  .   .   .
+
+
+
+
