@@ -4,13 +4,30 @@ DFS maze solver.
 Robin Andrews - https://compucademy.net/
 The stack contains positions as (row, column) tuples. Predecessors are kept in a dictionary.
 """
-
 from helpers import get_path, offsets, is_legal_pos, read_maze
 from stack import Stack
 
 
 def dfs(maze, start, goal):
-    pass
+    # We instantiate a new stack
+    stack = Stack()
+    # We're pushing our start position which is a coordinate/row, column tuples (an immutable list)
+    stack.push(start)
+    #     predecessors is a dictionary containing one item who's predecessor is none
+    predecessors = {start: None}
+
+    while not stack.is_empty():
+        current_cell = stack.pop()
+        if current_cell == goal:
+            return get_path(predecessors, start, goal)
+        for direction in ["up", "right", "down", "left"]:
+            row_offset, col_offset = offsets[direction]
+            # neighbor refers to the cell
+            neighbor = (current_cell[0] + row_offset, current_cell[1] + col_offset)
+            if is_legal_pos(maze, neighbor) and neighbor not in predecessors:
+                stack.push(neighbor)
+                predecessors[neighbor] = current_cell
+    return None
 
 
 if __name__ == "__main__":
