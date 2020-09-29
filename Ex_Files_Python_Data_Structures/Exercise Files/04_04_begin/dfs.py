@@ -13,18 +13,26 @@ def dfs(maze, start, goal):
     stack = Stack()
     # We're pushing our start position which is a coordinate/row, column tuples (an immutable list)
     stack.push(start)
-    #     predecessors is a dictionary containing one item who's predecessor is none
+    #     predecessors is a dictionary containing the predecessor of the start position, which is none
     predecessors = {start: None}
 
     while not stack.is_empty():
+        # While the stack is not empty, we get the current cell by popping
         current_cell = stack.pop()
+        # We check if it's the goal, if it is, the program is finished!
         if current_cell == goal:
             return get_path(predecessors, start, goal)
+        # Otherwise, for every direction in this list, we check the offsets (imported from helper
+        # file and we assign the i, j values from from that so that we can then check the neighbor
+        # The whole point of this is to check the coordinates of the contiguous cells in all four directions
         for direction in ["up", "right", "down", "left"]:
             row_offset, col_offset = offsets[direction]
             # neighbor refers to the cell
             neighbor = (current_cell[0] + row_offset, current_cell[1] + col_offset)
+            # now we say, for each of those directions, if it's a legal position and it doesn't already exist in our
+            # predecessors list, that means we haven't discovered it yet - so we push it on to our stack.
             if is_legal_pos(maze, neighbor) and neighbor not in predecessors:
+                # finally we push the neighbor on the stack and update the predecessors
                 stack.push(neighbor)
                 predecessors[neighbor] = current_cell
     return None
