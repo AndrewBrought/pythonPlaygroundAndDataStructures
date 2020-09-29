@@ -1,0 +1,69 @@
+Depth-First Search (DFS)
+
+Can be described as an aggressive algorithm. It will continue down a particular path until it either find's it's
+goal or reaches a dead-end. If dead-end, it backtracks to the last viable position and tries a different
+path from there.
+
+DFS is better in situations, where the goal is to discover a path to a given destination as soon as possible,
+however it does not guarantee finding the shortest path
+
+Applications of Depth-First Search:
+*Optimizations for criteria (cost, speed, safety, fuel, etc.)
+*Pathfinding
+*Scheduling algorithms
+*Assessing investment decision trees
+*Ordering of formula cell evaluation in spreadsheets
+*Determining the order of compilation tasks for software builds
+*Data serialization
+*Resolving symbol dependencies
+*Simulations like games of strategy
+
+Depth-first search pseudo code:
+Stack: [start_pos]
+Predecessors: {start_pos None}
+
+Here we have a stack containing the start position...and we have a dictionary containing the predecessors
+of discovered cells.
+
+Think of dictionaries as Key/Value pairs - like an actual dictionary contains words as Keys and Values as definitions
+So, up above we have our start value and the predecessors = none because there isn't a predecessor to the initial
+position
+
+Algorithm:
+1. Pop the stack (even though the i incrementation is at the right hand of our list, we think of it as the top.)
+2. We ask ourselves, is this the goal?
+3. ...if so, we're done because we've found our destination.
+4. Otherwise, we push the undiscovered neighbors onto the stack and add them to the predecessors/discovered
+5. Repeat this until there are no more items left in the stack
+
+**Practice conceptualizing the trace by using the grid tracer app in GUI Code/grid_tracer
+
+Coding a depth-first search (DFS):
+04_04_begin
+
+We will use some helper functions and values that are provided in a separate file that we will import into our
+dfs file.
+
+First, we'll look at helpers.py
+
+offsets ={} are quick ways of referencing relative positions within the maze.
+
+right means - (0 rows [up and down], 1 column [to the right])
+left means - (0, -1 [to the left])
+up means - (-1 [decreasing the row number], 0 [leaving the column number constant])
+down - (1 [down a row], 0)
+
+
+We also have a very similar read_maze function which we used when reading a 2d text maze
+
+function is_legal_pos(maze, pos) - is checking whether a given position is actually on the maze and also
+whether it's not an obstacle symbol: != "*"
+
+
+function get_path(predecessors, start, goal) - it traces through the predecessors. So you give it a start position
+and a goal position and a list of predecessors and it will work backwards, working out what the predecessor of each
+node is until you get the path, then it reverses it and returns it.
+
+
+NOTE: the DFS is based on the Stack structure
+
