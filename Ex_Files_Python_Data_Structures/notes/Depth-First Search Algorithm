@@ -65,6 +65,5 @@ and a goal position and a list of predecessors and it will work backwards, worki
 node is until you get the path, then it reverses it and returns it.
 
 
-
-
+NOTE: the DFS is based on the Stack structure
 
