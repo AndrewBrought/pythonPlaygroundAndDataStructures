@@ -1,0 +1,52 @@
+The Queue DS is similar to a queue in real life (line) in that you have an arrival order in
+wish you wish to maintain
+
+Applications of the Queue Data Structure:
+
+*CPU scheduling
+*Data is transferred asynchronously between two processes (we need some way of maintaining the original
+order
+*Graph traversal algorithms
+
+Many other applications: Often when a resource is to be shared among multiple consumers
+is when a Queue becomes relevant:
+
+*Transport and operations management
+*File servers
+*IO buffers
+*Printer queues
+*Phone Calls to customer service hotlines
+*Resource is shared among multiple consumers
+
+A Queue is a data structure in which all additions are made at one end (called the Rear or Tail of the queue),
+    All deletions are from the other end (Front or head of the queue is where things are removed)
+
+Which end serves as the head or the tail is an implementation detail
+    -In this course we'll consider the head to be the left hand side of the queue
+    and the right to be the tail
+
+The Queue is a First In First Out data structure (FIFO) - in contrast to the stack which is (FILO)
+
+enqueue() = add an item to the end of the queue
+dequeue() = remove and return the item at the front
+
+Build a Queue class in python:
+dir 05_02_begin / queue_ll.py (it was named this because there is an existing module in python called
+queue. It can be a common and hard to debug error occurs in naming your own module the same as something
+that exists...so in this way, the author added an additional tag to prevent that _ll stands for linkedinlearning
+
+It is possible to use a list for a queue, like we did for the Stack, however lists are not very efficient for
+this purpose. While appends and pops from the end of a list are fast, doing inserts or pops from the
+beginning of a list is slow, because all of the other elements have to be shifted by one.
+
+So for this example we're going to use an existing data structure within python called a deque - stands for
+double-ended queue, it's a data structure that is optimized for insertions and deletions at either end.
+Basically like a list but with that optimization that if you want to insert or delete from either end,
+it will be fast.
+
+Deque's are great for large lists
+** See dir 05_02_begin / queue_ll.py
+
+
+
+
