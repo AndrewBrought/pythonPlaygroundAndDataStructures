@@ -30,3 +30,23 @@ The Queue is a First In First Out data structure (FIFO) - in contrast to the sta
 enqueue() = add an item to the end of the queue
 dequeue() = remove and return the item at the front
 
+Build a Queue class in python:
+dir 05_02_begin / queue_ll.py (it was named this because there is an existing module in python called
+queue. It can be a common and hard to debug error occurs in naming your own module the same as something
+that exists...so in this way, the author added an additional tag to prevent that _ll stands for linkedinlearning
+
+It is possible to use a list for a queue, like we did for the Stack, however lists are not very efficient for
+this purpose. While appends and pops from the end of a list are fast, doing inserts or pops from the
+beginning of a list is slow, because all of the other elements have to be shifted by one.
+
+So for this example we're going to use an existing data structure within python called a deque - stands for
+double-ended queue, it's a data structure that is optimized for insertions and deletions at either end.
+Basically like a list but with that optimization that if you want to insert or delete from either end,
+it will be fast.
+
+Deque's are great for large lists
+** See dir 05_02_begin / queue_ll.py
+
+
+
+
