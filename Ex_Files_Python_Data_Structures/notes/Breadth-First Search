@@ -25,6 +25,15 @@ to the node. If there were a shorter path then BFS would have already found it
 -Sometimes the behavior of BFS is described as Flood fill as it behaves much like water spreading out over
 a surfaces (in an unweighted graph)
 
+We can practice tracing the path of a BFS in using the GUI Code/grid_tracer
+-It's important when using the Queue DS that we remember that it is a FIFO (First In First Out)
+order. So instead of having a Stack structure where we pop() off the end (right side of the stack),
+our Queue takes from the beginning (left side of the stack) with the dequeue() method.
+
+Also, it must run until the Queue [] is empty these two conditions are what drive it to flow out
+like water
+
+
 
 
 
