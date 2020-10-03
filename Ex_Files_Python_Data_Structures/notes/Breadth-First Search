@@ -1,0 +1,31 @@
+Breadth-First Search (BFS) is based on the Queue Data Structure
+
+It's a bit like having the center of a circle as the starting point and then moving out to different
+radii or distances from that central point as the algorithm progresses
+
+BFS will always give the shortest path if no edge weights are used - Note this application doesn't have
+any variance of edge weight. All edges have the same weight of 1.
+
+So, if no edge-weights are used it will always give the shortest path - because it first finds all the
+vertices that are one edge away from the starting point, then, all the vertices that are 2 edges away and so on.
+
+When you find the specified vertex (goal vertex) you know the path you've traced so far is the shortest path
+to the node. If there were a shorter path then BFS would have already found it
+
+* Applications of Breadth-First Search:
+* GPS systems
+* Flight reservation systems
+* Finding neighbor nodes in peer-to-peer networks
+* Social networking sites to find connections between users
+* Web crawlers
+* Many applications in artificial intelligence
+* Electronics and communication engineering
+* Scientific modeling
+
+-Sometimes the behavior of BFS is described as Flood fill as it behaves much like water spreading out over
+a surfaces (in an unweighted graph)
+
+
+
+
+
