@@ -30,8 +30,30 @@ class PriorityQueue:
         # This gives us human readable representation of what's going on inside our object
         return str(self.elements)
 
+
 # Now we look at the methods in action
 
 if __name__ == "__main__":
     pq = PriorityQueue()
     print(pq)
+    print(pq.is_empty())
+
+    # item, priority
+    # We're going to be putting 2 things on our priority queue: value and a priority associated
+    pq.put("eat", 2)
+    pq.put("code", 1)
+    pq.put("sleep", 3)
+
+    # import to note that the order we have the items arranged does not matter because they are
+    # stored according to the item's priority
+    # The only thing we can guarantee about this output is that the item with the highest priority
+    # will be on the left-hand side...the rest we can't guarantee where they're going to be
+    print(pq)
+
+    print(pq.get())
+    print(pq.get())
+    print(pq.get())
+    # We put the index (ln 27) after self.elements in the get method to make sure we only return
+    # the element itself and not the index value as well
+
+
