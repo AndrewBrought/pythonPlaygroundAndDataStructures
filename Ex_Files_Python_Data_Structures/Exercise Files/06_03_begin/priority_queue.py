@@ -1,6 +1,6 @@
 """
 Python Data Structures - A Game-Based Approach
-Priority Queue Class based on heapq.
+Priority Queue Data Structure Class based on heapq.
 Robin Andrews - https://compucademy.net/
 """
 
