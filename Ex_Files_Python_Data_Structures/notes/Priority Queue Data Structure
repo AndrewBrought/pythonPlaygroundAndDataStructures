@@ -1,0 +1,31 @@
+A Priority Queue is useful in any situation where there are resources that that need to be
+allocated according to some rule or rules of precedence
+
+For example, the allocation of healthcare resources in a hospital, where the severity of patient's medical
+needs determines their level of priority.
+
+Applications of the Priority Queue:
+-Artificial intelligence: for example, A* search algorithm
+-Optimization algorithms
+-Operating system process scheduling
+-Bandwidth management
+-Statistical analysis
+-Spam filtering
+
+The operations for the Priority Queue:
+
+get(): retrieve the item with the highest priority - similar to DQ in a queue, except it's not just to do
+with the position in the queue, it's to do with the priority associated with the item
+
+put(item): add item to priority queue. It's equivalent to enqueue in a normal queue whereby you put
+something into the queue.
+
+is_empty(): it's very useful when we're iterating through the priority queue to work out if there's
+anything left.
+
+In short, a priority queue is a collection in which items can be added at anytime...but the only
+item that can be removed is the one with the highest priority.
+
+** See 07_02_begin/priority_queue.py
+
+
