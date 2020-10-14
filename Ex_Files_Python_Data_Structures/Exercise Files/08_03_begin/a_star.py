@@ -20,7 +20,32 @@ def heuristic(a, b):
 
 
 def a_star(maze, start, goal):
-    pass
+    pq = PriorityQueue()
+    # In the A* trace we said that the F value for the initial cell position would be equal to
+    # the H value...but we are not required to have to calculate that manually because there's only
+    # going to be one item on the queue at this point, it will automatically
+    # have the highest priority so we can set it equal to 0
+    pq.put(start, 0)
+    predecessors = {start: None}
+    g_values = {start: 0}
+    # In our representation of these mazes, we have cells connected by edges and the weight
+    # of each edge is just one. So the new cost is just one more than the previous cost
+    # putting it in g values and in predecessors is equivalent to saying *we've discovered this
+
+    while not pq.is_empty():
+        current_cell = pq.get()
+        if current_cell == goal:
+            return get_path(predecessors, start, goal)
+        for direction in ["up", "right", "down", "left"]:
+            row_offset, col_offset = offsets[direction]
+            neighbour = (current_cell[0] + row_offset, current_cell[1] + col_offset)
+            if is_legal_pos(maze, neighbour) and neighbour not in g_values:
+                new_cost = g_values[current_cell] + 1
+                g_values[neighbour] = new_cost
+                f_value = new_cost + heuristic(goal, neighbour)
+                pq.put(neighbour, f_value)
+                predecessors[neighbour] = current_cell
+        return None
 
 
 if __name__ == "__main__":

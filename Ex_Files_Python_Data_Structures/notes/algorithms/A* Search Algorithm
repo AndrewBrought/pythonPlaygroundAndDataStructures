@@ -1,0 +1,73 @@
+A* SEARCH ALGORITHM:
+
+This is what, in some ways, is the culmination of everything we've studied so far.
+
+It's a powerful and widely used algorithm for calculating shortest paths.
+
+APPLICATIONS:
+-Traffic Navigation Systems (GPS)
+-Social network analysis
+-Natural language processing
+-Machine Learning
+-Puzzle solutions and puzzle-analogous problem solving
+-Algorithmic training
+-Robotics
+-Video games
+-etc.
+
+What distinguishes the A-star algorithm, from the previous we've looked at, is the use of a
+heuristic to determine the likely best choice for each step of the algorithm.
+
+A heuristic is informally defined as a rule-of-thumb.
+
+In the A-star algorithm, the rule-of-thumb is to choose the next position to visit based on its
+distance to from the goal.
+In our implementation this distance will be calculated using what's called the Manhattan distance,
+or taxi cab distance...which means the distance between two points on a 2-D grid when the path between
+those two points has to follow the grid layout.
+
+It's based on the idea that a taxi will have to stay on the road and will not be able to drive through
+buildings.
+
+"Taxi cab" distance between two points is measured along the axis at right angles. So to get from
+the point on the bottom left to the top right, you have to travel a certain number of blocks in
+a horizontal direction, and a certain number of blocks in a vertical direction. And actually, it
+doesn't really matter what path the Manhattan distance will remain the same.
+
+Another heuristic that is sometimes used in the A-star algorithm is the Euclidean distance,
+calculated using the Pythagorean theorem.
+
+In the A-star algorithm, every discovered cell is assigned the following value:
+
+G value: best distance from start to current cell
+H value: heuristic distance from the current cell to destination
+F value: the sum of the G value and the H value (representing the probable optimal value or minimum
+distance based on the heuristic used)
+
+In our implementation we calculate H values as needed without storing them. G values and
+predecessors are stored in a dictionary, while the Priority Queue contains cell coordinates along
+with their associated F values. That is because F value is the one of primary importance, and the
+other two are used just in calculating that F value
+
+There are other ways this can be implemented...for example, creating objects representing the cell
+or nodes - with properties containing the various values.
+
+One thing that can help understand how the A-star search algorithm works, is just to be clear about
+the language which is being used. So, for example, we have visited versus discovered, and we have
+something called an open set, which contains the discovered nodes...and that means in our implementation,
+the ones that have been put into the priority queue already. So they are discovered, but not necessarily
+visited.
+
+There's another piece of terminology called the closed set, which in our implementation is the nodes
+which HAVE been visited. That means we have nodes in our G values dictionary and our predecessors
+dictionary.
+
+Tracing the A* Behavior:
+
+We have a Priority Queue (PQ) - it contains two tuples, and each tuple contains a cell and an F value
+or that cell. example: PQ: [(K,4)]
+**See 08_03_begin/a_star.py
+
+
+
+
